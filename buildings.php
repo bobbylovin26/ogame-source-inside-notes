@@ -14,32 +14,32 @@ $xnova_root_path = './';
 include($xnova_root_path . 'extension.inc');
 include($xnova_root_path . 'common.' . $phpEx);
 
-	includeLang('buildings');
-	
-	UpdatePlanetBatimentQueueList ( $planetrow, $user );
-	$IsWorking = HandleTechnologieBuild ( $planetrow, $user );
+includeLang('buildings');
 
-	switch ($_GET['mode']) {
-		case 'fleet':
-			// --------------------------------------------------------------------------------------------------
-			FleetBuildingPage ( $planetrow, $user );
-			break;
+UpdatePlanetBatimentQueueList ( $planetrow, $user );
+$IsWorking = HandleTechnologieBuild ( $planetrow, $user );
 
-		case 'research':
-			// --------------------------------------------------------------------------------------------------
-			ResearchBuildingPage ( $planetrow, $user, $IsWorking['OnWork'], $IsWorking['WorkOn'] );
-			break;
+switch ($_GET['mode']) {
+    case 'fleet':
+        // --------------------------------------------------------------------------------------------------
+        FleetBuildingPage ( $planetrow, $user );
+        break;
 
-		case 'defense':
-			// --------------------------------------------------------------------------------------------------
-			DefensesBuildingPage ( $planetrow, $user );
-			break;
+    case 'research':
+        // --------------------------------------------------------------------------------------------------
+        ResearchBuildingPage ( $planetrow, $user, $IsWorking['OnWork'], $IsWorking['WorkOn'] );
+        break;
 
-		default:
-			// --------------------------------------------------------------------------------------------------
-			BatimentBuildingPage ( $planetrow, $user );
-			break;
-	}
+    case 'defense':
+        // --------------------------------------------------------------------------------------------------
+        DefensesBuildingPage ( $planetrow, $user );
+        break;
+
+    default:
+        // --------------------------------------------------------------------------------------------------
+        BatimentBuildingPage ( $planetrow, $user );
+        break;
+}
 
 // -----------------------------------------------------------------------------------------------------------
 // History version

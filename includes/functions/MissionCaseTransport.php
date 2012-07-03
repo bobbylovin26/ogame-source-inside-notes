@@ -10,7 +10,6 @@
 function MissionCaseTransport ( $FleetRow ) {
 	global $lang;
 
-    // 起始星球
 	$QryStartPlanet   = "SELECT * FROM {{table}} ";
 	$QryStartPlanet  .= "WHERE ";
 	$QryStartPlanet  .= "`galaxy` = '". $FleetRow['fleet_start_galaxy'] ."' AND ";
@@ -21,7 +20,6 @@ function MissionCaseTransport ( $FleetRow ) {
 	$StartName        = $StartPlanet['name'];
 	$StartOwner       = $StartPlanet['id_owner'];
 
-    // 目标星球
 	$QryTargetPlanet  = "SELECT * FROM {{table}} ";
 	$QryTargetPlanet .= "WHERE ";
 	$QryTargetPlanet .= "`galaxy` = '". $FleetRow['fleet_end_galaxy'] ."' AND ";
@@ -33,7 +31,6 @@ function MissionCaseTransport ( $FleetRow ) {
 	$TargetOwner      = $TargetPlanet['id_owner'];
 
 	if ($FleetRow['fleet_mess'] == 0) {
-        // 还在队列中的飞机,如果起飞时间已过
 		if ($FleetRow['fleet_start_time'] < time()) {
 			StoreGoodsToPlanet ($FleetRow, false);
 			$Message         = sprintf( $lang['sys_tran_mess_owner'],
@@ -63,7 +60,6 @@ function MissionCaseTransport ( $FleetRow ) {
 			doquery( $QryUpdateFleet, 'fleets');
 		}
 	} else {
-        // 该完成的任务
 		if ($FleetRow['fleet_end_time'] < time()) {
 			$Message             = sprintf ($lang['sys_tran_mess_back'], $StartName, GetStartAdressLink($FleetRow, ''));
 			SendSimpleMessage ( $StartOwner, '', $FleetRow['fleet_end_time'], 5, $lang['sys_mess_tower'], $lang['sys_mess_fleetback'], $Message);

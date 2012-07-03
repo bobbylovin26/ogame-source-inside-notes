@@ -155,7 +155,7 @@
 	$QryInsertConfig    .= "('debug'                 , '0'), ";
 	
 	$QryInsertConfig    .= "('TIMEZONE'					, 'Asia/Shanghai'),";
-	$QryInsertConfig    .= "('VERSION'               	, '0.9'), ";
+	$QryInsertConfig    .= "('VERSION'               	, '1.4'), ";
 	$QryInsertConfig    .= "('ADMINEMAIL'               , '" . addslashes($lang['ADMINEMAIL']) . "'), ";
 	$QryInsertConfig    .= "('MAX_GALAXY_IN_WORLD'      , 99), ";
 	$QryInsertConfig    .= "('MAX_SYSTEM_IN_GALAXY'     , 499), ";

@@ -165,6 +165,16 @@
 			<th><textarea name="close_reason" cols="80" rows="5" size="80">{close_reason}</textarea></th>
 		</tr>
 		<tr>
+			<th>{adm_opt_game_noobpr}</th>
+			<th><input name="noobprotection" maxlength="1" size="5" value="{noobprotection}" type="text"></th>
+		</tr><tr>
+			<th>{adm_opt_game_noobti}</th>
+			<th><input name="noobprotectiontime" maxlength="7" size="5" value="{noobprotectiontime}" type="text"></th>
+		</tr><tr>
+			<th>{adm_opt_game_noobmu}</th>
+			<th><input name="noobprotectionmulti" maxlength="1" size="5" value="{noobprotectionmulti}" type="text"></th>
+		</tr>
+		<tr>
 			<td class="c" colspan="2">{messages_settings}</td>
 		</tr>
 		<tr>

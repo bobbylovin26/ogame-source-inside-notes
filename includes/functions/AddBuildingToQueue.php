@@ -69,11 +69,13 @@ function AddBuildingToQueue ( &$CurrentPlanet, $CurrentUser, $Element, $AddMode 
 			}
 		} else {
 			$ActualLevel  = $CurrentPlanet[$resource[$Element]];
+
 			if ($AddMode == true) {
 				$BuildLevel   = $ActualLevel + 1;
 				$BuildTime    = GetBuildingTime($CurrentUser, $CurrentPlanet, $Element);
 			} else {
 				$BuildLevel   = $ActualLevel - 1;
+                // 降级时间减半
 				$BuildTime    = GetBuildingTime($CurrentUser, $CurrentPlanet, $Element) / 2;
 			}
 		}
@@ -84,10 +86,12 @@ function AddBuildingToQueue ( &$CurrentPlanet, $CurrentUser, $Element, $AddMode 
 			$PrevBuild = explode (",", $QueueArray[$ActualCount - 1]);
 			$BuildEndTime = $PrevBuild[3] + $BuildTime;
 		}
+
 		$QueueArray[$ActualCount]       = $Element .",". $BuildLevel .",". $BuildTime .",". $BuildEndTime .",". $BuildMode;
 		$NewQueue                       = implode ( ";", $QueueArray );
 		$CurrentPlanet['b_building_id'] = $NewQueue;
 	}
+
 	return $QueueID;
 }
 

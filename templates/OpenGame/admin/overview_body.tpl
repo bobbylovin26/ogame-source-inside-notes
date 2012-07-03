@@ -1,15 +1,15 @@
 <br><br>
 <h2>{adm_ov_title}</h2>
-<table width="600">
+<table width="750">
 <tr>
 	<td class="c" colspan="2">{adm_ov_infos}</td>
 </tr><tr>
 	<td class="b" style="color:#FFFFFF">{adm_ov_yourv}: <strong>{adm_ov_data_yourv}</strong></td>
-	<td class="b" style="color:#FFFFFF">{adm_ov_lastv}: <b><a style="color:orange;" href="http://www.xnova.fr/">{adm_ov_here}</a></b></td>
+	<td class="b" style="color:#FFFFFF">{adm_ov_lastv}: <b><a style="color:orange;" href="http://www.ogamecn.com/">{adm_ov_here}</a></b></td>
 </tr>
 </table>
 <br>
-<table width="600">
+<table width="750">
 <tr>
 	<td class="c" colspan="13">{adm_ov_onlin}</td>
 </tr>
@@ -30,6 +30,6 @@
 </tr>
 	{adm_ov_data_table}
 <tr>
-	<th class="b" colspan="13">{adm_ov_count}: {adm_ov_data_count}</th>
+	<th class="b" colspan="13">{adm_ov_count} {adm_ov_data_count}</th>
 </tr>
 </table>

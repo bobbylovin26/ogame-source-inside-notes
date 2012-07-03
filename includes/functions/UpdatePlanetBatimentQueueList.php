@@ -9,6 +9,7 @@
 
 function UpdatePlanetBatimentQueueList ( &$CurrentPlanet, &$CurrentUser ) {
 	$RetValue = false;
+
 	if ( $CurrentPlanet['b_building_id'] != 0 ) {
 		while ( $CurrentPlanet['b_building_id'] != 0 ) {
 			if ( $CurrentPlanet['b_building'] <= time() ) {
@@ -23,12 +24,13 @@ function UpdatePlanetBatimentQueueList ( &$CurrentPlanet, &$CurrentUser ) {
 			}
 		}
 	}
+
 	return $RetValue;
 }
 
 // Revision History
 // - 1.0 Mise en module initiale
-// - 1.1 Mise a jour des ressources sur la planete verifi�e (pour prendre en compte les ressources produites
+// - 1.1 Mise a jour des ressources sur la planete verifiable (pour prendre en compte les ressources produites
 //       pendant la construction et avant l'evolution evantuel d'une mine ou d'en batiment
 
 ?>

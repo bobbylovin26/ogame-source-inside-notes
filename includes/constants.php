@@ -46,7 +46,7 @@ if ( defined('INSIDE') ) {
 	define('BUILD_CRISTAL'            , $game_config['BUILD_CRISTAL']);
 	define('BUILD_DEUTERIUM'          , $game_config['BUILD_DEUTERIUM']);
 	// Debug Level
-	define('DEBUG'					  , $game_config['debug']);
+	define('DEBUG'					  , $game_config['BUILD_DEUTERIUM']); 
 	// Mot qui sont interdit a la saisie !
 	$ListCensure = array ( "<", ">", "script", "doquery", "http", "javascript", "'" );
 } else {

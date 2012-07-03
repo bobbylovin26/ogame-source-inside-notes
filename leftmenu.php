@@ -89,8 +89,5 @@ function ShowLeftMenu ( $Level , $Template = 'left_menu') {
 	$Menu = ShowLeftMenu ( $user['authlevel'] );
 	display ( $Menu, "Menu", '', false );
 
-// -----------------------------------------------------------------------------------------------------------
-// History version
-// 1.0 - Passage en fonction pour XNova version future
-// 1.1 - Modification pour gestion Admin / Game OP / Modo
+
 ?>

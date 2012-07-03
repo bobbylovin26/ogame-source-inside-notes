@@ -11,7 +11,7 @@ function f(target_url,win_name) {
 <br>
 <table width="130" cellspacing="0" cellpadding="0">
 <tr>
-	<td colspan="2" style="border-top: 1px #545454 solid"><div><center>{servername}<!--br><a href="changelog.php" target={mf}>(<font color=red>{XNovaRelease}</font>)</a--><center></div></td>
+	<td colspan="2" style="border-top: 1px #545454 solid"><div><center>{servername}<br><a href="changelog.php" target={mf}>(<font color=red>{XNovaRelease}</font>)</a><center></div></td>
 </tr><tr>
 	<td colspan="2" background="{dpath}img/bg1.gif"><center>{devlp}</center></td>
 </tr><tr>
@@ -66,9 +66,9 @@ function f(target_url,win_name) {
 	<td colspan="2"><div><a href="buddy.php" accesskey="c" target="{mf}">{Buddylist}</a></div></td>
 </tr>
 {notes_link}
-<tr>
+<!--tr>
 	<td colspan="2"><div><a href="chat.php" accesskey="a" target="{mf}">{Chat}</a></div></td>
-</tr><tr>
+</tr--><tr>
 	<td colspan="2"><div><a href="{forum_url}" accesskey="1" target="{mf}">{Board}</a></div></td>
 </tr><!--tr>
 	<td colspan="2"><div><a href="add_declare.php" accesskey="1" target="{mf}">{Declare}</a></div></td>

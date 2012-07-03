@@ -143,6 +143,22 @@ function DisplayGameSettingsPage ( $CurrentUser ) {
 			if (isset($_POST['enable_marchand_']) && is_numeric($_POST['enable_marchand_'])) {
 				$game_config['enable_marchand'] = $_POST['enable_marchand_'];
 			}
+			//新手保护
+			// Revenu de Noobprotection保护模式 
+			if (isset($_POST['noobprotection']) && is_numeric($_POST['noobprotection'])) {
+				$game_config['noobprotection'] = $_POST['noobprotection'];
+			}
+
+			// Revenu de Noobprotection Time"保护时间(5000)
+			if (isset($_POST['noobprotectiontime']) && is_numeric($_POST['noobprotectiontime'])) {
+				$game_config['noobprotectiontime'] = $_POST['noobprotectiontime'];
+			}
+
+			// Revenu de Noobprotection Multi"保护标准(5)
+			
+			if (isset($_POST['noobprotectionmulti']) && is_numeric($_POST['noobprotectionmulti'])) {
+				$game_config['noobprotectionmulti'] = $_POST['noobprotectionmulti'];
+			}
 			// Activation -ou non- des notes
 			if (isset($_POST['enable_notes_']) && is_numeric($_POST['enable_notes_'])) {
 				$game_config['enable_notes'] = $_POST['enable_notes_'];
@@ -291,6 +307,10 @@ function DisplayGameSettingsPage ( $CurrentUser ) {
 			doquery("UPDATE {{table}} SET `config_value` = '" .$game_config['MAX_FLEET_OR_DEFS_PER_ROW'] ."' WHERE `config_name` ='MAX_FLEET_OR_DEFS_PER_ROW'", 'config');
 			doquery("UPDATE {{table}} SET `config_value` = '" .$game_config['MAX_BUILDING_QUEUE_SIZE'] ."' WHERE `config_name` ='MAX_BUILDING_QUEUE_SIZE'", 'config');
 			doquery("UPDATE {{table}} SET `config_value` = '" .$game_config['SPY_REPORT_ROW'] ."' WHERE `config_name` ='SPY_REPORT_ROW'", 'config');
+			//新手保护
+			doquery("UPDATE {{table}} SET `config_value` = '". $game_config['noobprotection']         ."' WHERE `config_name` = 'noobprotection';", 'config');
+			doquery("UPDATE {{table}} SET `config_value` = '". $game_config['noobprotectiontime']     ."' WHERE `config_name` = 'noobprotectiontime';", 'config');
+			doquery("UPDATE {{table}} SET `config_value` = '". $game_config['noobprotectionmulti']    ."' WHERE `config_name` = 'noobprotectionmulti';", 'config');
 			
 			AdminMessage ($lang['adm_opt_btn_success'], $lang['adm_opt_success'], '?');
 			
@@ -356,6 +376,11 @@ function DisplayGameSettingsPage ( $CurrentUser ) {
 
 			$PageTPL                         = gettemplate('admin/options_body');
 			$Page                           .= parsetemplate( $PageTPL,  $parse );
+			
+			//新手保护
+			$parse['noobprotection']    	   = $game_config['noobprotection'];
+			$parse['noobprotectiontime']     = $game_config['noobprotectiontime'];
+			$parse['noobprotectionmulti']    = $game_config['noobprotectionmulti'];
 
 			display ( $Page, $lang['adm_opt_title'], false, '', true );
 		}

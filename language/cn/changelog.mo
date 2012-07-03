@@ -1,118 +1,51 @@
 <?php
-$lang['Version']     = 'Version';
-$lang['Description'] = 'D&eacute;scription';
+$lang['Version']     = '版本';
+$lang['Description'] = '详情';
 $lang['changelog']   = array(
-'0.7h' => 'Correction de bugs (Chlorel)
-- Interface Officier refaite
-- Ajout blocage des "refresh meta"
-- Ajustement de divers Bugs
-- Correction de divers textes (flousedid)
-- Correction de defauts visuels (e-Zobar)',
+'描述' => 'OGameCN 源码版权声明
 
-'0.7g' => 'Correction diverses (Chlorel)
-- Modification de l\'ordre du traitement de la liste de construction de batiments
-- Mise en conformit&eacute; du code pour une seule commande "echo"
-- Quelques modules de r&eacute;&eacute;crits
-- Correction bug de d&eacute;doublement de flotte
-- Mise &agrave; jour dynamique de la taille des silos, production des mines et de l\'&eacute;nergie
-- Divers adaptations dans la section admin (e-Zobar)
-- Modification lourde du style XNova (e-Zobar)',
+所有用户均可免费下载OGameCN源代码，并可对其进行修改或美化！
+不得将本软件用于商业用途！如有其他事宜请与我们联系！
+请您保留“启梦工作室”字样及 www.OGameCN.com 和 www.PPDream.com 链接。
+',
+'OGameCN V1.4' => '版本更新：
+1.完善管理员后台，如增加后台刷舰队，建筑，资源，研究等。
+2.修改登陆界面。
+3.修正程序安装。
+',
+'OGameCN V1.3' => '版本更新：
 
-'0.7f' => 'Informations et porte de saut: (Chlorel)
-- Nouvelle page d\'information completement repens&eacute;e
-- Nouvelle interface porte de saut int&eacute,gr&eacute;e a la page d\'information
-- Nouvelle gestion de l\'affichage des rapid fire dans la page d\'information
-- Multitude de correction faites par e-Zobar',
+1.修正聊天界面。
+2.修正银河乱码。
 
-'0.7e' => 'Partout et nulle part : (Chlorel)
-- Nouvelle page registration (mise au standard)
-- Nouvelle page records (mise en conformit&eacute; avec le site)
-- Modif kernel (y en a pas mal mais pas possible de toutes les expliquer l&agrave; et de toutes maniere pas
-  grand monde ne serait capable de les comprendre',
-
-'0.7d' => 'Partie admin : (e-Zobar)
-- menage dans pas mal de modules
-- alignement du menu au style de fonctionnement du site
-- traduction complete de ce qui n\'etait pas encore en francais',
-
-'0.7c' => 'Statistiques : (Chlorel)
-- Suppression des appels base de donn&eacute;es de l\ancien systeme de Statistiques
-- Bug Impossibilit&eacute; de fabriquer des defenses ou des elements de flotte n\'utilisant pas de metal
-- Bug Comme certains petits rigolos s\'amusent a lancer des quantit&eacute;es enormes de vaisseau dans
-  une meme ligne de la queue de construction vaisseau, nous en sommes arriv&eacute;s a limiter le nombre
-  d\'element fabriquable par ligne donc maximum 1000 vaisseaux ou defenses a la fois !!
-- Bug erreur lors de la selection planete par la combo
-- Mise a jour de l\'installeur',
-
-'0.7b' => 'Statistiques : (Chlorel)
-- Reecriture de la page de Statistique (appell&eacute;e par l\'utilisateur)
-- Les stat alliance s\'affichent !
-- Ecriture du generateur admin des stats
-- Separation des stats de l\'enregistrement utilisateur (les stats on leur propre base de donn&eacute;es)',
-
-'0.7a' => 'Divers : (Chlorel)
-- Bug Technologies (la duree de recherche apparait a nouveau quand on revient dans le laboratoire
-- Bug Missiles (mis a plat de la port&eacute;e des missiles interplanetaires, et mise en place de la limite de fabrication par rapport a la taille du silo)
-- Bug Port&eacute;e des phalange corrig&eacute; (on ne peut plus phalanger toute la galaxie)
-- Bug Correction de la conssomation de deuterium quand on passe par le menu galaxie',
-
-'0.7' => 'Building :
-- Reecriture de la page
-- Modularisation
-- Correction bugs de statistiques
-- Debugage de la liste de construction batiments
-- Diverses retouches (Chlorel)
-- Divers debug (au fil de l\'eau) (e-Zobar)
-- Ajout de fonction sur la vue principale (Tom1991)',
-
-'0.6b' => 'Divers :
-- Correction & Ajouts de fonctions pour les officiers (Tom1991)
-- Menage dans les scripts java inclus (Chlorel)
-- Correction divers bug (Chlorel)
-- Mise en place version 0.5 de la liste de construction batiments (Chlorel)',
-
-'0.6a' => 'Graphisme :
-- Ajout Skin XNova (e-Zobar)
-- Correction d\'effets nefastes (e-Zobar)
-- Ajout de bugs involotaires (Chlorel)',
-
-'0.6' => 'Galaxy (suite): (by Chlorel)
-- Modification et reecriture de flottenajax.php
-- Modification des routine javascript et ajax pour permettre les modification dynamiques de la galaxie
-- Corrections bug dans certains liens des popups
-- Definition nouveau protocole d\'appel, dorenavant meme sur une lune, la galaxie s\'affiche a partir de la bonne position
-- Correction des appels de recyclage
-- Ajout module "Officier" (by Tom1991)',
-
-'0.5' => 'Galaxy: (by Chlorel)
-- Decoupage ancien module
-- Modification systeme de generation des popup dans la vue de la galaxie
-- Modularisation de la generation de page',
-
-'0.4' => 'Overview: (by Chlorel)
-- Mise en forme ancien module
-- Gestion de l\'affichage des flotte personnelle 100%
-- Modification affichage des lunes quand presentes
-- Correction bug renommer les lunes (pour qu\'elles soient effectivement renomm&eacute;es)',
-
-'0.3' => 'Gestion de flottes: (by Chlorel)
-- Modification / modularisation / documentation de la boucle de gestion des vols 100%
-- Modification Mission d\'espionnage 100%
-- Modification Mission de Colonisation 100%
-- Modification Mission Transport 100%
-- Modification Mission Stationnement 100%
-- Modification Mission Recyclage 100%',
-
-'0.2' => 'Corrections
-- Ajouts de la version 0.5 des Exploration (by Tom1991)
-- Modification de la boucle de controle des flottes 10% (by Chlorel)',
-
-'0.1' => 'Merge des version flotte:
-- Mise en place de la strat&eacute;gie de developpement
-- Mise en place de nouvelles pages de gestion de flotte',
-
-'0.0' => 'Version de depart:
-- Base du repack a Tom1991',
+',
+'OGameCN V1.2' => '版本更新：
+1.修正聊天乱码。
+2.修正银河探测和回收废墟乱码。
+3.修正邮箱找回密码。
+4.汉化月球扫描（探测银河活动舰队），并对代码修正。
+5.更改部分汉化文件。
+',
+'OGameCN V1.1' => '版本更新：
+1.增加安装页面(如:http://localhost/ogame/install)
+2.增加仓库容量
+3.增加后台管理
+    建造数量［正常：1000］
+    建造队列［正常：5］  
+    殖民星球［正常：8］  
+    每宇宙最大银河［正常：99］  
+    每银河最大太阳系［正常：499］  
+    每太阳系最大星球［正常：15］  
+    初始仓库容量［正常：1000000］  
+    初始金属［正常：500］  
+    初始晶体［正常：500］  
+    初始重氢［正常：500］  
+4.更新部分图片
+',
+'OGameCN V1.0' => 'Ogame 银河帝国 0.8e 五国语言版。
+版本简介：增加简体中文版。
+',
 );
+
 // Created by ppdream. All rights reversed (C) 2008
 ?>
