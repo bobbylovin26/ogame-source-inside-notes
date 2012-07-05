@@ -20,6 +20,7 @@ function AddBuildingToQueue ( &$CurrentPlanet, $CurrentUser, $Element, $AddMode 
 	global $lang, $resource;
 
 	$CurrentQueue  = $CurrentPlanet['b_building_id'];
+
 	if ($CurrentQueue != 0) {
 		$QueueArray    = explode ( ";", $CurrentQueue );
 		$ActualCount   = count ( $QueueArray );
@@ -44,8 +45,10 @@ function AddBuildingToQueue ( &$CurrentPlanet, $CurrentUser, $Element, $AddMode 
 		// Faut verifier si l'Element que l'on veut integrer est deja dans le tableau !
 		if ($QueueID > 1) {
 			$InArray = 0;
+
 			for ( $QueueElement = 0; $QueueElement < $ActualCount; $QueueElement++ ) {
 				$QueueSubArray = explode ( ",", $QueueArray[$QueueElement] );
+
 				if ($QueueSubArray[0] == $Element) {
 					$InArray++;
 				}
@@ -56,6 +59,7 @@ function AddBuildingToQueue ( &$CurrentPlanet, $CurrentUser, $Element, $AddMode 
 
 		if ($InArray != 0) {
 			$ActualLevel  = $CurrentPlanet[$resource[$Element]];
+
 			if ($AddMode == true) {
 				$BuildLevel   = $ActualLevel + 1 + $InArray;
 				$CurrentPlanet[$resource[$Element]] += $InArray;

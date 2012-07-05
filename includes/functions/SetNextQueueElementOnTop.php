@@ -14,9 +14,11 @@ function SetNextQueueElementOnTop ( &$CurrentPlanet, $CurrentUser ) {
 	// Garde fou ... Si le temps de construction n'est pas 0 on ne fait rien !!!
 	if ($CurrentPlanet['b_building'] == 0) {
 		$CurrentQueue  = $CurrentPlanet['b_building_id'];
+
 		if ($CurrentQueue != 0) {
 			$QueueArray = explode ( ";", $CurrentQueue );
 			$Loop       = true;
+
 			while ($Loop == true) {
 				$ListIDArray         = explode ( ",", $QueueArray[0] );
 				$Element             = $ListIDArray[0];
@@ -31,8 +33,10 @@ function SetNextQueueElementOnTop ( &$CurrentPlanet, $CurrentUser ) {
 				} else {
 					$ForDestroy = false;
 				}
-				$HaveRessources = IsElementBuyable ($CurrentUser, $CurrentPlanet, $Element, true, $ForDestroy);
-				if ($ForDestroy) {
+
+                $HaveRessources = IsElementBuyable ($CurrentUser, $CurrentPlanet, $Element, true, $ForDestroy);
+
+                if ($ForDestroy) {
 					if ($CurrentPlanet[$resource[$Element]] == 0) {
 						$HaveRessources  = false;
 						$HaveNoMoreLevel = true;
@@ -46,12 +50,14 @@ function SetNextQueueElementOnTop ( &$CurrentPlanet, $CurrentUser ) {
 					$CurrentTime                   = time();
 					$BuildEndTime                  = $BuildEndTime;
 					$NewQueue                      = implode ( ";", $QueueArray );
+
 					if ($NewQueue == "") {
 						$NewQueue                      = '0';
 					}
 					$Loop                          = false;
 				} else {
 					$ElementName = $lang['tech'][$Element];
+
 					if ($HaveNoMoreLevel == true) {
 						$Message     = sprintf ($lang['sys_nomore_level'], $ElementName );
 					} else {
@@ -68,6 +74,7 @@ function SetNextQueueElementOnTop ( &$CurrentPlanet, $CurrentUser ) {
 					SendSimpleMessage ( $CurrentUser['id'], '', '', 99, $lang['sys_buildlist'], $lang['sys_buildlist_fail'], $Message);
 
 					array_shift( $QueueArray );
+
 					$ActualCount         = count ( $QueueArray );
 					if ( $ActualCount == 0 ) {
 						$BuildEndTime  = '0';

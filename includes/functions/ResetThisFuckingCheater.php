@@ -10,7 +10,9 @@
 function ResetThisFuckingCheater ( $UserID ) {
 	$TheUser        = doquery ("SELECT * FROM {{table}} WHERE `id` = '". $UserID ."';", 'users', true);
 	$UserPlanet     = doquery ("SELECT `name` FROM {{table}} WHERE `id` = '". $TheUser['id_planet']."';", 'planets', true);
-	DeleteSelectedUser ( $UserID );
+
+    DeleteSelectedUser ( $UserID );
+
 	if ($UserPlanet['name'] != "") {
 		// Creation de l'utilisateur
 		$QryInsertUser  = "INSERT INTO {{table}} SET ";

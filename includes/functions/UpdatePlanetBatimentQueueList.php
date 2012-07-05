@@ -7,6 +7,12 @@
  * @copyright 2008 By Chlorel for XNova
  */
 
+/**
+ * @param $CurrentPlanetd 当前星球
+ * @param $CurrentUser 当前用户
+ * @return bool
+ * Batiment 是法语，大厦
+ */
 function UpdatePlanetBatimentQueueList ( &$CurrentPlanet, &$CurrentUser ) {
 	$RetValue = false;
 
@@ -15,7 +21,8 @@ function UpdatePlanetBatimentQueueList ( &$CurrentPlanet, &$CurrentUser ) {
 			if ( $CurrentPlanet['b_building'] <= time() ) {
 				PlanetResourceUpdate ( $CurrentUser, $CurrentPlanet, $CurrentPlanet['b_building'], false );
 				$IsDone = CheckPlanetBuildingQueue( $CurrentPlanet, $CurrentUser );
-				if ( $IsDone == true ) {
+
+                if ( $IsDone == true ) {
 					SetNextQueueElementOnTop ( $CurrentPlanet, $CurrentUser );
 				}
 			} else {

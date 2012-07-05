@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * constants.php
  *
@@ -53,7 +52,5 @@ if ( defined('INSIDE') ) {
 	//die("黑客入侵企图Hacking attempt");
 	die("Hacking attempt");
 }
-
-
 
 ?>

@@ -35,11 +35,13 @@ function HandleTechnologieBuild ( &$CurrentPlanet, &$CurrentUser ) {
 		if ($ThePlanet['b_tech']    <= time() &&
 			$ThePlanet['b_tech_id'] != 0) {
 			$CurrentUser[$resource[$ThePlanet['b_tech_id']]]++;
+
 			$QryUpdatePlanet  = "UPDATE {{table}} SET ";
 			$QryUpdatePlanet .= "`b_tech` = '0', ";
 			$QryUpdatePlanet .= "`b_tech_id` = '0' ";
 			$QryUpdatePlanet .= "WHERE ";
 			$QryUpdatePlanet .= "`id` = '". $ThePlanet['id'] ."';";
+
 			doquery( $QryUpdatePlanet, 'planets');
 
 			$QryUpdateUser    = "UPDATE {{table}} SET ";
@@ -47,19 +49,23 @@ function HandleTechnologieBuild ( &$CurrentPlanet, &$CurrentUser ) {
 			$QryUpdateUser   .= "`b_tech_planet` = '0' ";
 			$QryUpdateUser   .= "WHERE ";
 			$QryUpdateUser   .= "`id` = '". $CurrentUser['id'] ."';";
-			doquery( $QryUpdateUser, 'users');
+
+            doquery( $QryUpdateUser, 'users');
 			$ThePlanet["b_tech_id"] = 0;
+
 			if (isset($WorkingPlanet)) {
 				$WorkingPlanet = $ThePlanet;
 			} else {
 				$CurrentPlanet = $ThePlanet;
 			}
-			$Result['WorkOn'] = "";
+
+            $Result['WorkOn'] = "";
 			$Result['OnWork'] = false;
 
 		} elseif ($ThePlanet["b_tech_id"] == 0) {
 			doquery("UPDATE {{table}} SET `b_tech_planet` = '0'  WHERE `id` = '". $CurrentUser['id'] ."';", 'users');
-			$Result['WorkOn'] = "";
+
+            $Result['WorkOn'] = "";
 			$Result['OnWork'] = false;
 
 		} else {

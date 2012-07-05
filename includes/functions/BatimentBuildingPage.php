@@ -21,10 +21,12 @@ function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
 		// On passe une commande
 		$bThisIsCheated = false;
 		$bDoItNow       = false;
+
 		$TheCommand     = $_GET['cmd'];
 		$Element        = $_GET['building'];
 		$ListID         = $_GET['listid'];
-		if       ( isset ( $Element )) {
+
+		if ( isset ( $Element )) {
 			if ( !strchr ( $Element, " ") ) {
 				if ( !strchr ( $Element, ",") ) {
 					if (in_array( trim($Element), $Allowed[$CurrentPlanet['planet_type']])) {
@@ -41,6 +43,7 @@ function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
 		} elseif ( isset ( $ListID )) {
 			$bDoItNow = true;
 		}
+
 		if ($bDoItNow == true) {
 			switch($TheCommand){
 				case 'cancel':
@@ -64,6 +67,7 @@ function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
 					break;
 			} // switch
 		} elseif ($bThisIsCheated == true) {
+            // 这个函数名要野啊
 			ResetThisFuckingCheater ( $CurrentUser['id'] );
 		}
 	}
@@ -74,6 +78,7 @@ function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
 
 	// On enregistre ce que l'on a modifi� dans planet !
 	BuildingSavePlanetRecord ( $CurrentPlanet );
+
 	// On enregistre ce que l'on a eventuellement modifi� dans users
 	BuildingSaveUserRecord ( $CurrentUser );
 
@@ -85,6 +90,7 @@ function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
 
 	$SubTemplate         = gettemplate('buildings_builds_row');
 	$BuildingPage        = "";
+
 	foreach($lang['tech'] as $Element => $ElementName) {
 		if (in_array($Element, $Allowed[$CurrentPlanet['planet_type']])) {
 			$CurrentMaxFields      = CalculateMaxPlanetFields($CurrentPlanet);
