@@ -67,7 +67,7 @@ function BatimentBuildingPage (&$CurrentPlanet, $CurrentUser) {
 					break;
 			} // switch
 		} elseif ($bThisIsCheated == true) {
-            // 这个函数名要野啊
+            // 这个函数名好野啊
 			ResetThisFuckingCheater ( $CurrentUser['id'] );
 		}
 	}
